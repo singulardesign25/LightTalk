@@ -1,0 +1,15 @@
+<resources>
+    <!-- Tema principal de LightTalk -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Colores principales -->
+        <item name="colorPrimary">@android:color/holo_blue_light</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_orange_light</item>
+
+        <!-- Fondo por defecto -->
+        <item name="android:windowBackground">@android:color/white</item>
+
+        <!-- Estilo de texto por defecto -->
+        <item name="android:textColorPrimary">@android:color/black</item>
+    </style>
+</resources>
