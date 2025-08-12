@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.hardware.camera2.CameraAccessException;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFlash() {
+        // Si FlashController lanza alguna excepción, la capturamos genéricamente
         try {
             flashController = new FlashController(this);
-        } catch (CameraAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "Error inicializando el flash", Toast.LENGTH_SHORT).show();
         }
@@ -65,4 +65,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
