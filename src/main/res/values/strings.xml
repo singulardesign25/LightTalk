@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+    <string name="button_launch_interstitial">Botón de prueba</string>
+    <string name="app_ad_banner">test-banner-id</string>
     <string name="app_name">LightTalk</string>
     <string name="app_ads_id">test-ads-id</string>
     <string name="hint_message">Escribe el mensaje</string>
