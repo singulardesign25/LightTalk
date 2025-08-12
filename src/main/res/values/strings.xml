@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
-
- <resources>
     <string name="app_name">LightTalk</string>
     <string name="hint_message">Escribe el mensaje</string>
     <string name="send_button">Enviar en Morse</string>
-
 </resources>
+
