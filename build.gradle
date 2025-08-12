@@ -22,10 +22,10 @@ apply plugin: 'com.github.ben-manes.versions'
 
 android {
   compileSdkVersion buildConfig.compileSdk
-  namespace 'burrows.apps.example.template'
+  namespace 'com.example.lighttalk'
 
   defaultConfig {
-    applicationId 'burrows.apps.example.template'
+    applicationId 'com.example.lighttalk'
     versionCode 1
     versionName '1.0'
     minSdkVersion buildConfig.minSdk
