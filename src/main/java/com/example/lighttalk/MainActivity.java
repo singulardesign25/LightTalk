@@ -31,12 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         buttonSend.setOnClickListener(v -> {
             String text = editText.getText().toString();
-            if (!text.isEmpty() && flashController != null) {
-                String morse = MorseEncoder.toMorse(text);
-                flashController.sendMorse(morse);
-            } else {
+
+            if (text.isEmpty()) {
                 Toast.makeText(this, "Escribe un mensaje primero", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            if (flashController == null || !flashController.isAvailable()) {
+                Toast.makeText(this, "Flash no disponible en este dispositivo", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            String morse = MorseEncoder.toMorse(text);
+            flashController.sendMorse(morse);
         });
     }
 
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             flashController = new FlashController(this);
         } catch (CameraAccessException e) {
             e.printStackTrace();
+            Toast.makeText(this, "Error inicializando el flash", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -53,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             initFlash();
         } else {
-            Toast.makeText(this, "Permiso de camara denegado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
         }
     }
 }
+
