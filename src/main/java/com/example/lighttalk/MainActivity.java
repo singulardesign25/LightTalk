@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             initFlash();
         } else {
-            Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permiso de camara denegado", Toast.LENGTH_SHORT).show();
         }
     }
 }
